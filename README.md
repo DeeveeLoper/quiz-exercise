@@ -9,8 +9,8 @@ Appen ska innehålla:
 - Flexibelitet för att skapa frågor och sätta poäng.
 
 Frågetyper:
-• Fritext
-• 1, x, 2-format
-• Flervalsalternativ
-• Skala 1-10
-• Årtalsbaserade svar
+- Fritext
+- 1, x, 2-format
+- Flervalsalternativ
+- Skala 1-10
+- Årtalsbaserade svar
