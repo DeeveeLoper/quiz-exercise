@@ -1,4 +1,6 @@
 // klassen ärver egenskaper och metoder från huvudklassen Question
+using System;
+
 public class RatingQuestion : Question 
 {
     private int correctRating { get; set; } // Rätt Svar
