@@ -1,9 +1,9 @@
-// klassen ‰rver egenskaper och metoder frÂn huvudklassen Question
+// klassen √§rver egenskaper och metoder fr√•n huvudklassen Question
 using System;
 
 public class RatingQuestion : Question 
 {
-    private int correctRating { get; set; } // R‰tt Svar
+    private int correctRating { get; set; } // R√§tt Svar
 
 
     public RatingQuestion(string text, int points, int rating)
@@ -11,7 +11,7 @@ public class RatingQuestion : Question
     {
         if (rating < 1 || rating > 10) 
         {
-            throw new ArgumentException("MÂste vara mellan 1-10!");
+            throw new ArgumentException("M√•ste vara mellan 1-10!");
         }
         correctRating = rating;
     }
@@ -20,7 +20,7 @@ public class RatingQuestion : Question
     {
         if (int.TryParse(answer, out int givenRating)) 
         {
-            return givenRating == correctRating; // kollar att anv‰ndarens svar samma som r‰tta svaret 
+            return givenRating == correctRating; // kollar att anv√§ndarens svar √§r samma som r√§tta svaret 
         }
         return false;
     }
