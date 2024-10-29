@@ -2,6 +2,7 @@
 {
     static void Main()
     {
+        // === Testar klassen OneXTwoQuestion ===
         TestOneXTwoQuestion();
         Console.WriteLine("Tryck på något för att avsluta!");
         Console.ReadKey();
