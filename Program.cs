@@ -1,31 +1,32 @@
 ﻿class Program 
 {
-    static void Main() 
+    static void Main()
     {
-        // ==== TEST ====
-        //Håller reda på poängen
-        int totalScore = 0;
+        TestOneXTwoQuestion();
+        Console.WriteLine("Tryck på något för att avsluta!");
+        Console.ReadKey();
+    }
 
-        TextQuestion question = new TextQuestion("Vad heter Sveriges andra största stad?", 1000, "Göteborg");
+    static void TestOneXTwoQuestion() 
+    {
+        var question = new OneXTwoQuestion("Vad heter planeten närmast solen?", 100, "1"); //Merkurius
 
-        Console.WriteLine(question.GetQuestion());
+        bool validAnswer = question.CheckAnswer("1");
+        bool invalidAnswer1 = question.CheckAnswer("2");
+        bool invalidAnswer2 = question.CheckAnswer("X");
 
-        Console.Write("\nDitt svar:");
-        string userAnswer = Console.ReadLine();
+        Console.WriteLine("Testar OneXTwoQuestion:");
+        Console.WriteLine($"Korrekt svar {validAnswer}");
+        Console.WriteLine($"Fel svar 1:{invalidAnswer1}");
+        Console.WriteLine($"Fel svar 2: {invalidAnswer2}");
 
-        if (question.CheckAnswer(userAnswer))
+        try
         {
-            totalScore += question.GetPoints();
-
-            Console.WriteLine("Rätt svar! Vi alla gillar glass.");
-            Console.WriteLine($"Du fick {question.GetPoints()} fina poäng!");
-            Console.WriteLine($"Total poäng {totalScore}");
+            var invalidQuestion = new OneXTwoQuestion("Vad heter planeten närmast solen?", 100, "1");
         }
-        else
+        catch (ArgumentException e)
         {
-            Console.WriteLine("Fel svar. Rimmar på Götteborg.");
-            Console.WriteLine($"Du fick 0 poäng");
+            Console.WriteLine($"Kastar förväntad exception: {e.Message}");
         }
-       
     }
 }
