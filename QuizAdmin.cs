@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+// Användare som är administratör och kan skapa och ta bort frågor
 class QuizAdmin
 {
     // En privat lista med frågor
@@ -21,14 +22,14 @@ class QuizAdmin
         questions.Add(new MultipleChoiceQuestion(text, points, options, correctOption));
     }
 
-    public void CreateRatingQuestion(string text, int points, int correctRating, int tolerance) 
+    public void CreateRatingQuestion(string text, int points, int rating) 
     {
-        questions.Add(new RatingQuestion(text, points, correctRating, tolerance));
+        questions.Add(new RatingQuestion(text, points, rating));
     }
 
-    public void CreateYearQuestion(string text, int points, int correctYear, int tolerance) 
+    public void CreateYearQuestion(string text, int points, int correctYear) 
     {
-        questions.Add(new YearQuestion(text, points, correctYear, tolerance));
+        questions.Add(new YearQuestion(text, points, correctYear));
     }
 
     // Hämtar alla frågor
